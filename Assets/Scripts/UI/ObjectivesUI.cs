@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 
@@ -11,6 +12,7 @@ public class ObjectivesUI : MonoBehaviour
     [SerializeField] public TMP_Text cratesObjective;
     [SerializeField] public TMP_Text squeezeToTalk;
 
+    public UnityEvent onFinishCrates;
 
     private bool hasCompletedNpcObjective;
     private float cratesTotal;
@@ -39,11 +41,14 @@ public class ObjectivesUI : MonoBehaviour
         if (cratesTossed >= cratesTotal)
         {
             cratesObjective.gameObject.SetActive(false);
+            onFinishCrates?.Invoke();
+            Loader.Load(Loader.Scene.MainMenu);
         }
     }
 
     public void CompleteNpcObjective() {
         showSqueezeToTalk = false;
+        HideSqueezeToTalk();
         npcObjective.gameObject.SetActive(false);
         cratesObjective.gameObject.SetActive(true);
     }
