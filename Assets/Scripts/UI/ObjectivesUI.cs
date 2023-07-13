@@ -11,6 +11,7 @@ public class ObjectivesUI : MonoBehaviour
     [SerializeField] public TMP_Text npcObjective;
     [SerializeField] public TMP_Text cratesObjective;
     [SerializeField] public TMP_Text squeezeToTalk;
+    [SerializeField] public TMP_Text toggleSails;
 
     public UnityEvent onFinishCrates;
 
@@ -25,6 +26,7 @@ public class ObjectivesUI : MonoBehaviour
         cratesObjective.text = $"Crates Tossed: {cratesTossed}/{cratesTotal}";
         cratesObjective.gameObject.SetActive(false);
         squeezeToTalk.gameObject.SetActive(false);
+        toggleSails.gameObject.SetActive(false);
     }
 
     // Arguably shouldn't be in here
@@ -63,5 +65,15 @@ public class ObjectivesUI : MonoBehaviour
     public void HideSqueezeToTalk()
     {
         squeezeToTalk.gameObject.SetActive(false);
+    }
+
+    public void ShowActivateSails()
+    {
+        toggleSails.gameObject.SetActive(true);    
+    }
+
+    public void HideActivateSails()
+    {
+        toggleSails.gameObject.SetActive(false);
     }
 }
