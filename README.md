@@ -19,3 +19,7 @@ Designed around participating in the Boston Tea Party. You join the Sons of Libe
 
 ## Known Bugs
 - Intermittently, some crates when tossed overboard will be counted twice
+
+## Short Trailer 
+https://github.com/user-attachments/assets/797a09e4-fc64-43f5-a282-b935edb24a49
+
